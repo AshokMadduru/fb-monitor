@@ -4,5 +4,5 @@
 
 // get mouse-down events
 document.onmousedown = function(data){
-	self.port.emit("mouse-down", data.target.tagName+" "+data.target.id+" "+data.target.nodeType+" "+data.target.className);
+	self.port.emit("mouse-down", /* data.target.tagName+" "+ data.target.id +" "+data.target.nodeType+" "+*/data.target.className );
 }
