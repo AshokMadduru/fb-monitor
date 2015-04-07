@@ -4,5 +4,10 @@
 
 // get mouse-down events
 document.onmousedown = function(data){
-	self.port.emit("mouse-down", /* data.target.tagName+" "+ data.target.id +" "+data.target.nodeType+" "+*/data.target.className );
+	console.log(data.target.className);
+	if(data.target.className == "_42ft _4jy0 _11b _4jy3 _4jy1 selected _51sy")
+		self.port.emit("mouse","Status posted");
+	else if(data.target.className == "_42ft _4jy0 layerConfirm uiOverlayButton _4jy3 _4jy1 selected _51sy") self.port.emit("mouse","Shared");
+	else if(data.target.parentNode.className == "UFILikeLink") self.port.emit("mouse","Liked");
 }
+
